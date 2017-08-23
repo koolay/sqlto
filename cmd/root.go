@@ -9,7 +9,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "sqlto",
 	Short: "sqlto is a tool for exporting data to xls, json, csv files from a SQL.",
-	Long:  `Support mysql, postegres, sqlite, mssql.`,
+	Long:  `Support mysql, pg, sqlite, mssql.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		// Do Stuff Here

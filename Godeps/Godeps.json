@@ -13,6 +13,16 @@
 			"Rev": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
 		},
 		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-164-g472a074",
+			"Rev": "472a0745531a17dbac346e828b4c60e73ddff30c"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "go1.0-cutoff-164-g472a074",
+			"Rev": "472a0745531a17dbac346e828b4c60e73ddff30c"
+		},
+		{
 			"ImportPath": "github.com/spf13/cobra",
 			"Rev": "4a7b7e65864c064d48dce82efbbfed2bdc0bf2aa"
 		},

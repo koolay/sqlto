@@ -15,11 +15,7 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/koolay/sqlto/config"
-	"github.com/koolay/sqlto/db"
-	"github.com/koolay/sqlto/output"
 	"github.com/spf13/cobra"
 )
 
@@ -29,13 +25,7 @@ var mysqlCmd = &cobra.Command{
 	Short: "Export records from mysql",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		rows, err := db.ExecSQL("mysql", &config.Global)
-		if err != nil {
-			panic(err)
-		}
-		if err := output.Export(&config.Global, rows); err != nil {
-			fmt.Println(err)
-		}
+		execExport("mysql")
 	},
 }
 
