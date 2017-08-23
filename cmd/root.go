@@ -20,7 +20,7 @@ func init() {
 	cobra.OnInitialize(initConfig)
 	rootCmd.PersistentFlags().StringVarP(&config.Global.Output, "output", "o", "", "Output file eg. employees.xls")
 	rootCmd.PersistentFlags().StringVarP(&config.Global.SQL, "sql", "l", "", "SQL. eg. select * from employee limit 20")
-	rootCmd.PersistentFlags().BoolVarP(&config.Global.Pretty, "pretty", "p", false, "Pretty json output. It nly is affective for json.")
+	rootCmd.PersistentFlags().BoolVarP(&config.Global.Pretty, "pretty", "p", false, "Pretty json output. It is only affective for json.")
 }
 
 func initConfig() {

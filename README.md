@@ -27,6 +27,30 @@ Export data to xls, json, csv files from a SQL.
 
 `sqlto -h`
 
+```
+
+Support mysql, pg, sqlite, mssql.
+
+Usage:
+  sqlto [flags]
+  sqlto [command]
+
+Available Commands:
+  help        Help about any command
+  mysql       Export records from mysql
+  postgres    Export records from postgres
+  version     Print version
+
+Flags:
+  -h, --help            help for sqlto
+  -o, --output string   Output file eg. employees.xls
+  -p, --pretty          Pretty json output. It is only affective for json.
+  -l, --sql string      SQL. eg. select * from employee limit 20
+
+Use "sqlto [command] --help" for more information about a command.
+
+```
+
 ## TODO
 
 ### More supports
