@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"reflect"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/koolay/sqlto/config"
@@ -55,11 +56,16 @@ func (p *DB) Query(ctx *config.Context) (items []map[string]interface{}, err err
 		var rowMap = make(map[string]interface{})
 		for i, colName := range columns {
 			val := cols[i]
-			valBytes, ok := val.([]byte)
-			if ok {
-				rowMap[colName] = string(valBytes)
+			v := reflect.ValueOf(val)
+			if v.Kind() == reflect.Slice {
+				valBytes, ok := val.([]byte)
+				if ok {
+					rowMap[colName] = string(valBytes)
+				} else {
+					rowMap[colName] = ""
+				}
 			} else {
-				rowMap[colName] = ""
+				rowMap[colName] = val
 			}
 		}
 		items = append(items, rowMap)
