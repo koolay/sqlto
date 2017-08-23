@@ -11,7 +11,13 @@ Export data to xls, json, csv files from a SQL.
 
 - To stdout
 
+**from mysql**
+
 `sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"`
+
+**from postgres**
+
+`sqlto postgres -s "postgres://root:dev@localhost:5433/sample?sslmode=disable" -l "select * from user "  -p`
 
 - To json file
 
