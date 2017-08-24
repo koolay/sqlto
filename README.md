@@ -5,27 +5,33 @@ Export data to xls, json, csv files from a SQL.
 
 ## How to run
 
-- To xls
+**To xls**
+```bash
+$ sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"  -p -o user.xls
+```
 
-`sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"  -p -o user.xls`
+**To stdout**
 
-- To stdout
+```bash
+# from mysql
+$ sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"
 
-**from mysql**
+# from postgres
+$ sqlto postgres -s "postgres://root:dev@localhost:5433/sample?sslmode=disable" -l "select * from user "  -p
+```
 
-`sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"`
+**To json file**
 
-**from postgres**
+```bash
+$ sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"  -p -o user.json
+```
 
-`sqlto postgres -s "postgres://root:dev@localhost:5433/sample?sslmode=disable" -l "select * from user "  -p`
+**More help**
 
-- To json file
+```bash
+$ sqlto -h
+```
 
-`sqlto mysql -s "root:password@tcp(localhost:3306)/dbname?charset=utf8mb4,utf8" -l "select * from user limit 3"  -p -o user.json`
-
-- More help
-
-`sqlto -h`
 
 ```
 
@@ -52,15 +58,5 @@ Use "sqlto [command] --help" for more information about a command.
 ```
 
 ## TODO
-
-### More supports
-
-- postgres
-
-- mssql
-
-- sqlite
-
-### Execute duration
 
 To print how long take quering.
